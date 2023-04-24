@@ -9,7 +9,7 @@ let candao3 = true
 
 buttonLogin.onmouseleave = (e) => {
   if (!candao2) {
-    spanColor.style.right = `-40px`;
+    spanColor.style.right = `-45px`;
     spanColor.style.backgroundColor = `var(--color3)`;
   }
 };
@@ -24,7 +24,7 @@ buttonLogin.onmousemove = (e) => {
   candao ? (spanColor.style.backgroundColor = `var(--color1)`) : 0;
 };
 buttonRegister.onmousemove = (e) => {
-  spanColor.style.right = `-40px`;
+  spanColor.style.right = `-45px`;
   !candao ? (spanColor.style.backgroundColor = `var(--color1)`) : 0;
 };
 buttonLogin.onclick = (e) => {
