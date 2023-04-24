@@ -9,22 +9,22 @@ let candao3 = true
 
 buttonLogin.onmouseleave = (e) => {
   if (!candao2) {
-    spanColor.style.right = `-30px`;
+    spanColor.style.right = `-40px`;
     spanColor.style.backgroundColor = `var(--color3)`;
   }
 };
 buttonRegister.onmouseleave = (e) => {
   if (candao2) {
-    spanColor.style.right = `200px`;
+    spanColor.style.right = `220px`;
     spanColor.style.backgroundColor = `var(--color3)`;
   }
 };
 buttonLogin.onmousemove = (e) => {
-  spanColor.style.right = `200px`;
+  spanColor.style.right = `220px`;
   candao ? (spanColor.style.backgroundColor = `var(--color1)`) : 0;
 };
 buttonRegister.onmousemove = (e) => {
-  spanColor.style.right = `-30px`;
+  spanColor.style.right = `-40px`;
   !candao ? (spanColor.style.backgroundColor = `var(--color1)`) : 0;
 };
 buttonLogin.onclick = (e) => {
