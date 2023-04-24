@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>caldo me obligo</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <main id="form">
+      <div class="log_reg_containers">
+        <button class="button login_button">Login</button>
+        <button class="button register_button">Register</button>
+        <span></span>
+      </div>
+      <form action="/localhost" method="POST" id="logForm">
+        <div class="input_container">
+          <input class="input" placeholder=" " type="text" name="user" />
+          <label class="a">Username</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="password" name="pass" />
+          <label>Password</label>
+        </div>
+        <input type="submit" class="submit" value="login" />
+      </form>
+      <form action="/localhost" method="POST" id="regForm">
+        <div class="input_container">
+          <input class="input" placeholder=" " type="text" name="name" />
+          <label>Name</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="text" name="user" />
+          <label class="a">Username</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="password" name="pass" />
+          <label>Password</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="text" name="passc" />
+          <label>Confirm password</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="mail" name="mail" />
+          <label>Email</label>
+        </div>
+        <div class="input_container">
+          <input class="input" placeholder=" " type="text" name="phone" />
+          <label>Phone number</label>
+        </div>
+        <div class="check_container">
+          <input
+            class="check"
+            type="checkbox"
+            name="conditions"
+            id="conditions"
+          />
+          <label for="conditions">
+            Acepta los <a href="">Terminos y condiciones</a> de nuestra pagina </label
+          ><br />
+          <input
+            class="check"
+            type="checkbox"
+            name="newsletter"
+            id="newsletter"
+          />
+          <label id="checklabel" for="newsletter">
+            Acepta recibir correos de actualizacion y ofertas
+          </label>
+        </div>
+        <input type="submit" class="submit" value="register" />
+      </form>
+    </main>
+  </body>
+  <script src="function.js" type="text/javascript"></script>
+</html>

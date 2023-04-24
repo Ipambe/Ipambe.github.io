@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap");
+:root {
+  --color1: #f1f6f9;
+  --color2: #394867;
+  --color3: #212a3e;
+  --color4: #9ba4b5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: var(--color4);
+  border-radius: 7px;
+}
+body {
+  background-color: var(--color3);
+  width: 100vw;
+  padding: 50px 200px;
+  overflow: hidden;
+}
+
+
+
+#form {
+  width: 500px;
+  background-color: var(--color2);
+  padding: 30px 0 10px;
+  box-shadow: 4px 5px 17px 0px var(--color3);
+}
+#logForm {
+  display: none;
+}
+.log_reg_containers {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  column-gap: 130px;
+  margin: 0 auto 50px;
+  width: 80%;
+  overflow: hidden;
+}
+.log_reg_containers span {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: calc(50% + 30px);
+  right: -30px;
+  background-color: var(--color3);
+  transform: skewX(-50deg);
+  transition: 0.6s;
+}
+
+.log_reg_containers .button {
+  height: 50px;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+}
+
+input {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: var(--color3);
+  border: none;
+  border-radius: 1px;
+}
+.input_container {
+  position: relative;
+}
+
+.input {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  padding-top: 15px;
+}
+.input:focus {
+  border: 0.6px solid rgba(41, 79, 137, 0.686);
+  outline: none;
+}
+.input_container label {
+  position: absolute;
+  top: 19px;
+  left: 60px;
+  font-weight: 100;
+  font-size: 13px;
+  pointer-events: none;
+  transition: 0.2s;
+  opacity: 0.7;
+}
+.input:focus + label,
+.input:not(:placeholder-shown) + label {
+  top: 2px;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--color4);
+}
+
+.check_container {
+  width: 80%;
+  margin: 20px auto;
+}
+.check_container label {
+  display: inline;
+  font-size: 12px;
+}
+.check_container label a {
+  color: var(--color1);
+}
+.check {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+#checklabel {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.submit {
+  height: 30px;
+  border-radius: 20px;
+  width: 100px;
+  margin-top: 30px;
+  transition: background-color 0.4s;
+}
+.submit:hover {
+  background-color: var(--color1);
+}
