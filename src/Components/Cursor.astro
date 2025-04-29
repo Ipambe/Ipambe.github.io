@@ -1,0 +1,25 @@
+<div
+  id='cursor'
+  class='pointer-events-none fixed inset-0 z-30 transition duration-300 hidden lg:block lg:absolute'
+>
+</div>
+
+<style>
+  #cursor {
+    --color-gradient: rgba(29, 78, 216, 0.15);
+  }
+</style>
+
+<script>
+  const $cursor = document.getElementById('cursor') as HTMLDivElement
+  const delay = 10
+  let lastCall = 0
+
+  const mouseMoveHandler = ({ clientX, clientY }: MouseEvent) => {
+    const now = Date.now()
+    if (now - lastCall < delay) return
+    lastCall = now
+    $cursor.style.background = `radial-gradient(500px at ${clientX}px ${clientY}px, var(--color-gradient), transparent 80%)`
+  }
+  document.addEventListener('mousemove', mouseMoveHandler)
+</script>

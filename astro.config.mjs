@@ -1,6 +1,11 @@
 import { defineConfig } from 'astro/config'
 
-export default defineConfig({
-  site: 'https://Ipambe.github.io'
-})
+import tailwindcss from '@tailwindcss/vite';
 
+export default defineConfig({
+  site: 'https://Ipambe.github.io',
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
+})
