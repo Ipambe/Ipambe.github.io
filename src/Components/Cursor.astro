@@ -6,7 +6,12 @@
 
 <style>
   #cursor {
-    --color-gradient: rgba(29, 78, 216, 0.15);
+    --color-gradient: rgba(100, 100, 100, 0.15);
+    background: radial-gradient(
+      500px at 50%,
+      var(--color-gradient),
+      transparent 80%
+    );
   }
 </style>
 
@@ -19,7 +24,7 @@
     const now = Date.now()
     if (now - lastCall < delay) return
     lastCall = now
-    $cursor.style.background = `radial-gradient(500px at ${clientX}px ${clientY}px, rgba(100, 100, 100, 0.15), transparent 80%)`
+    $cursor.style.background = `radial-gradient(500px at ${clientX}px ${clientY}px, var(--color-gradient), transparent 80%)`
   }
   document.addEventListener('mousemove', mouseMoveHandler)
 </script>
