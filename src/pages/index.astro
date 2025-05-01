@@ -1,31 +1,18 @@
 ---
 import Cursor from '../Components/Cursor.astro'
 import Layout from '../Layouts/Layout.astro'
+import About from '../Sections/About.astro'
 import Header from '../Sections/Header.astro'
 ---
 
 <Layout>
   <Cursor />
   <div
-    class='mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0 lg:flex lg:justify-between lg:gap-4'
+    class='mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0 lg:flex lg:justify-between lg:gap-4'
   >
     <Header />
     <main class='pt-24 lg:w-[52%] lg:py-24'>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-      dignissimos quidem consequuntur aliquid temporibus vel voluptatum?
-      Blanditiis ut iure atque? Odio ipsam libero itaque eligendi, atque
-      possimus excepturi laborum dolores!
-      <p>
-        <svg class='icon size-10'>
-          <use xlink:href='/social-sprite.svg#email'></use>
-        </svg>
-        <svg class='icon size-10'>
-          <use xlink:href='/social-sprite.svg#github'></use>
-        </svg>
-        <svg class='icon size-10'>
-          <use xlink:href='/social-sprite.svg#linkedin'></use>
-        </svg>
-      </p>
+      <About />
     </main>
   </div>
 </Layout>
