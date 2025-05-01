@@ -1,13 +1,5 @@
 @import 'tailwindcss';
 
-:root {
-  color-scheme: dark;
-  color: rgb(200, 200, 200);
-}
-
-@theme {
-}
-
 @font-face {
   font-family: 'InterVariable';
   src: url('/fonts/InterVariable.ttf') format('truetype-variations');
