@@ -14,9 +14,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   // output: 'server',
-  // adapter: node({
-  //   mode: 'standalone',
-  // }),
+  adapter: node({
+    mode: 'standalone',
+  }),
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret", optional: false })
