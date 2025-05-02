@@ -2,7 +2,7 @@
 import SectionHeader from '../Components/SectionHeader.astro'
 ---
 
-<section id='header' class='flex flex-col gap-4'>
+<section id='about' class='flex flex-col items-start gap-4'>
   <SectionHeader title='Sobre mí' />
   <p>
     Mi interés por la programación comenzó en abril de 2022, cuando un amigo me
@@ -42,4 +42,37 @@ import SectionHeader from '../Components/SectionHeader.astro'
     tan solo {new Date('2025-12-31').getMonth() - new Date().getMonth() + 1} meses
     de finalizar mi plan de estudios.
   </p>
+  <a
+    href='/curriculum.pdf'
+    id='cv'
+    class='relative inline-block font-semibold text-neutral-200'
+    target='_blank'
+    rel='noreferrer noopener'
+    title='Currículum Vitae'
+    aria-label='Currículum Vitae'
+  >
+    Ver mi currículum
+  </a>
 </section>
+
+<style>
+  #cv {
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      transition: width 0.2s ease-in-out;
+      background-color: var(--color-neutral-200);
+      border-radius: 50%;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+</style>

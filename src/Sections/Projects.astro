@@ -1,17 +1,55 @@
 ---
-import ProjectCard from '../Components/ProjectCard.astro'
-import SectionHeader from '../Components/SectionHeader.astro'
+import ProjectCard from '@/Components/ProjectCard.astro'
+import SectionHeader from '@/Components/SectionHeader.astro'
+
+interface Project {
+  title: string
+  description: string
+  stack: string[]
+  github?: string
+  demo?: string
+}
+
+const projects: Project[] = [
+  {
+    title: 'DaranGet',
+    description:
+      'Aplicación web que permite a los usuarios descargar videos y audios de páginas como YouTube, Facebook, Instagram y TikTok. La aplicación cuenta también con un bot de discord y una extensión de Chrome.',
+    stack: ['React', 'Axios', 'Node.js', 'Express', 'Discord.js'],
+    github: 'https://github.com/BarkoRD/daranget',
+    demo: 'https://get.daranhub.com'
+  },
+  {
+    title: 'Martínez Misceláneos',
+    description:
+      'Aún en desarrollo, será una página web que muestre el catálogo de productos de la tienda Martínez Misceláneos. La página también cuenta con un panel de administración para gestionar los productos.',
+    stack: [
+      'Astro',
+      'Tailwind CSS',
+      'React',
+      'NestJS',
+      'Drizzle ORM',
+      'SQLite',
+      'JWT',
+      'OAuth2'
+    ]
+  }
+]
 ---
 
-<section class='flex flex-col gap-4'>
+<section class='flex flex-col gap-4' id='projects'>
   <SectionHeader title='Mis proyectos' />
   <ul class='flex flex-col gap-4'>
-    <ProjectCard
-      title='DaranGet'
-      description='Aplicación web que permite a los usuarios descargar videos y audios de páginas como YouTube, Facebook, Instagram y TikTok. La aplicación cuenta también con un bot de discord y una extensión de Chrome.'
-      stack={['React', 'Axios', 'Node.js', 'Express', 'Discord.js']}
-      github='https://github.com/BarkoRD/daranget'
-      demo='https://get.daranhub.com'
-    />
+    {
+      projects.map(({ title, description, stack, github, demo }) => (
+        <ProjectCard
+          title={title}
+          description={description}
+          stack={stack}
+          github={github}
+          demo={demo}
+        />
+      ))
+    }
   </ul>
 </section>
