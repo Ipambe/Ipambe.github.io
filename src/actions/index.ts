@@ -21,7 +21,7 @@ export const server = {
       });
 
       if (error) {
-        console.log(error)
+        console.error(error)
         throw new ActionError({
           code: 'BAD_REQUEST',
           message: error.message,
