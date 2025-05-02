@@ -13,10 +13,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  // output: 'server',
+  // adapter: node({
+  //   mode: 'standalone',
+  // }),
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret", optional: false })
