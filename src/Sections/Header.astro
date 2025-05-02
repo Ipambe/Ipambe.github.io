@@ -1,6 +1,6 @@
 ---
-import Linkedin from '../Components/Linkedin.astro'
-import Github from '../Components/Github.astro'
+import Github from '@/Components/Github.astro'
+import Linkedin from '@/Components/Linkedin.astro'
 ---
 
 <header
@@ -47,6 +47,22 @@ import Github from '../Components/Github.astro'
             >
           </a>
         </li>
+        <li>
+          <a
+            class='group flex items-center py-3'
+            href='#contact'
+            title='Contact'
+          >
+            <span
+              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
+            >
+            </span>
+            <span
+              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
+              >Contact</span
+            >
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -81,7 +97,7 @@ import Github from '../Components/Github.astro'
         target='_blank'
         rel='noreferrer noopener'
         href='mailto:adolforosa.dev@gmail.com'
-        title='LinkedIn'
+        title='Mail to Adolfo'
       >
         <span class='sr-only'>Mail to Adolfo</span>
         adolforosa.dev@gmail.com
