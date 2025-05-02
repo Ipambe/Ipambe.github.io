@@ -17,6 +17,38 @@ import Github from '../Components/Github.astro'
       Cuando aprendes a programar, tu visión del mundo cambia y te vuelves un
       creador de soluciones.
     </p>
+    <nav class='nav hidden lg:block'>
+      <ul class='mt-16 w-max'>
+        <li>
+          <a class='group flex items-center py-3' href='#about' title='About'>
+            <span
+              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
+            >
+            </span>
+            <span
+              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
+              >About</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            class='group flex items-center py-3'
+            href='#projects'
+            title='Projects'
+          >
+            <span
+              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
+            >
+            </span>
+            <span
+              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
+              >Projects</span
+            >
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <ul class='mt-8 flex items-center'>
     <li class='mr-5 shrink-0'>
@@ -45,7 +77,7 @@ import Github from '../Components/Github.astro'
     </li>
     <li class='mr-5 shrink-0'>
       <a
-        class='text-lg text-neutral-500 hover:text-neutral-300'
+        class='font-mono text-lg text-neutral-500 hover:text-neutral-300'
         target='_blank'
         rel='noreferrer noopener'
         href='mailto:adolforosa.dev@gmail.com'
@@ -57,3 +89,22 @@ import Github from '../Components/Github.astro'
     </li>
   </ul>
 </header>
+
+<script>
+  const sections = document.querySelectorAll('section')
+  const navLinks = document.querySelectorAll('nav a')
+
+  window.onscroll = () => {
+    let current: string | null = null
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute('id')
+      }
+    })
+
+    navLinks.forEach((li) => {
+      li.classList.toggle('active', li.getAttribute('href') === `#${current}`)
+    })
+  }
+</script>
