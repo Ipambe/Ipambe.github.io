@@ -1,0 +1,17 @@
+---
+import ProjectCard from '../Components/ProjectCard.astro'
+import SectionHeader from '../Components/SectionHeader.astro'
+---
+
+<section class='flex flex-col gap-4'>
+  <SectionHeader title='Mis proyectos' />
+  <ul class='flex flex-col gap-4'>
+    <ProjectCard
+      title='DaranGet'
+      description='Aplicación web que permite a los usuarios descargar videos y audios de páginas como YouTube, Facebook, Instagram y TikTok. La aplicación cuenta también con un bot de discord y una extensión de Chrome.'
+      stack={['React', 'Axios', 'Node.js', 'Express', 'Discord.js']}
+      github='https://github.com/BarkoRD/daranget'
+      demo='https://get.daranhub.com'
+    />
+  </ul>
+</section>
