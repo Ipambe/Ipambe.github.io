@@ -1,25 +1,14 @@
-import { defineConfig, envField } from 'astro/config'
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite'
-
-import node from '@astrojs/node';
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: 'https://Ipambe.github.io',
+  site: "https://Ipambe.github.io",
   server: {
     port: 3000,
-    host: true
+    host: true,
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
-  // output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
-  env: {
-    schema: {
-      RESEND_API_KEY: envField.string({ context: "server", access: "secret", optional: false })
-    }
-  }
-})
+});

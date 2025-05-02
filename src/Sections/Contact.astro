@@ -17,48 +17,5 @@ import SectionHeader from '@/Components/SectionHeader.astro'
         adolforosa.dev@gmail.com
       </a>
     </p>
-    <form
-      class='flex flex-col gap-8 rounded-md border border-neutral-700 bg-neutral-900 p-6 shadow-md'
-    >
-      <label class='flex flex-col gap-2'>
-        <span>Nombre</span>
-        <input
-          type='text'
-          name='name'
-          placeholder='Tu nombre'
-          required
-          class='rounded-md border border-neutral-700 bg-neutral-900 px-4 py-2 text-neutral-300 ring ring-transparent duration-300 focus:border-neutral-500 focus:ring-neutral-500 focus:outline-none'
-        />
-      </label>
-      <label class='flex flex-col gap-2'>
-        <span>Mensaje</span>
-        <textarea
-          name='message'
-          rows={5}
-          placeholder='Escribe tu mensaje aquí...'
-          required
-          class='field-sizing-content resize-none rounded-md border border-neutral-700 bg-neutral-900 px-4 py-2 text-neutral-300 ring ring-transparent transition duration-300 focus:border-neutral-500 focus:ring-neutral-500 focus:outline-none'
-        ></textarea>
-      </label>
-      <button
-        type='submit'
-        class='cursor-pointer self-end rounded-md bg-neutral-300 px-4 py-2 font-semibold text-neutral-950 transition duration-200 hover:bg-neutral-50 hover:shadow-2xl focus:ring focus:outline-none'
-      >
-        Enviar
-      </button>
-    </form>
   </div>
 </section>
-
-<script>
-  import { actions } from 'astro:actions'
-  import { navigate } from 'astro:transitions/client'
-
-  const form = document.querySelector('form')
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    const formData = new FormData(form)
-    const { error } = await actions.contact(formData)
-    if (!error) navigate('/')
-  })
-</script>
