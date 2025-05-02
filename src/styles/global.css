@@ -9,4 +9,13 @@
 
 html {
   font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+.active .nav-indicator {
+  @apply w-16 bg-neutral-200;
+}
+
+.active .nav-text {
+  @apply text-neutral-200;
 }

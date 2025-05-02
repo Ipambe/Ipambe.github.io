@@ -1,0 +1,69 @@
+---
+import Folder from './Folder.astro'
+import Github from './Github.astro'
+import Open from './Open.astro'
+
+interface Props {
+  title: string
+  description: string
+  github?: string
+  demo?: string
+  stack: string[]
+}
+const { title, description, github, demo, stack } = Astro.props
+---
+
+<li
+  class='flex flex-col justify-between gap-4 rounded-lg border border-neutral-800 bg-neutral-900 p-6 shadow-md transition-all duration-300 hover:border-neutral-700 hover:shadow-xl'
+>
+  <header class='flex flex-col gap-4'>
+    <div class='flex items-center justify-between gap-2'>
+      <div class='flex items-center gap-2'>
+        <Folder class='hidden size-10 sm:block' />
+        <h3 class='text-xl font-bold text-neutral-200 sm:text-2xl'>{title}</h3>
+      </div>
+      <div class='flex items-center gap-2'>
+        {
+          github && (
+            <a
+              href={github}
+              target='_blank'
+              rel='noopener noreferrer'
+              class='transition-all duration-300 hover:text-neutral-100'
+              title='Abrir proyecto en GitHub'
+              aria-label='Abrir proyecto en GitHub'
+            >
+              <Github class='size-6' />
+            </a>
+          )
+        }
+        {
+          demo && (
+            <a
+              href={demo}
+              target='_blank'
+              rel='noopener noreferrer'
+              class='transition-all duration-300 hover:text-neutral-100'
+              title='Abrir demo del proyecto'
+              aria-label='Abrir demo del proyecto'
+            >
+              <Open class='size-6' />
+            </a>
+          )
+        }
+      </div>
+    </div>
+    <p>{description}</p>
+  </header>
+  <footer>
+    <ul class='flex flex-wrap gap-2.5'>
+      {
+        stack.map((item) => (
+          <li class='flex cursor-crosshair items-center gap-2 rounded-full bg-neutral-800 px-3 py-1 font-mono text-sm text-neutral-400 transition-all duration-300 hover:bg-neutral-700 hover:text-neutral-200'>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </footer>
+</li>
