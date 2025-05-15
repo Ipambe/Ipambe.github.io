@@ -1,8 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @font-face {
-  font-family: 'InterVariable';
-  src: url('/fonts/InterVariable.woff2') format('woff2-variations');
+  font-family: "InterVariable";
+  src: url("/fonts/InterVariable.woff2") format("woff2-variations");
   font-weight: 100 900;
   font-style: normal;
 }
@@ -18,4 +18,23 @@ html {
 
 .active .nav-text {
   @apply text-neutral-200;
+}
+.link-effect {
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    transition: width 0.2s ease-in-out;
+    background-color: var(--color-neutral-200);
+    border-radius: 50%;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
