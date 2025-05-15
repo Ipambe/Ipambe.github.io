@@ -1,6 +1,6 @@
 ---
-import ProjectCard from '@/Components/ProjectCard.astro'
-import SectionHeader from '@/Components/SectionHeader.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import SectionHeader from '@/components/SectionHeader.astro'
 
 interface Project {
   title: string
@@ -12,6 +12,23 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'SharedShop',
+    description:
+      'Aún en desarrollo, SharedShop será una aplicación móvil colaborativa para gestión de listas de compras enfocada en familias, que permitirá a múltiples usuarios ver, agregar y modificar productos en tiempo real mediante WebSockets.',
+    stack: [
+      'React Native',
+      'Expo',
+      'NestJS',
+      'DrizzleORM',
+      'Clerk',
+      'Turso',
+      'WebSockets',
+      'TypeScript',
+      'Nativewind'
+    ],
+    github: 'https://github.com/Ipambe/SharedShop'
+  },
+  {
     title: 'DaranGet',
     description:
       'Aplicación web que permite a los usuarios descargar videos y audios de páginas como YouTube, Facebook, Instagram y TikTok. La aplicación cuenta también con un bot de discord y una extensión de Chrome.',
@@ -22,13 +39,13 @@ const projects: Project[] = [
   {
     title: 'Martínez Misceláneos',
     description:
-      'Aún en desarrollo, será una página web que muestre el catálogo de productos de la tienda Martínez Misceláneos. La página también cuenta con un panel de administración para gestionar los productos.',
+      'Es una página web que muestre el catálogo de productos de la tienda Martínez Misceláneos. La página también cuenta con un panel de administración que usa OAuth 2.0 para gestionar los productos.',
     stack: [
       'Astro',
       'Tailwind CSS',
       'React',
       'NestJS',
-      'Drizzle ORM',
+      'DrizzleORM',
       'SQLite',
       'JWT',
       'OAuth2'
