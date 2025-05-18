@@ -23,20 +23,20 @@ html {
 }
 
 /* .active .nav-indicator {
-  @apply w-16 bg-neutral-200;
+  @apply w-16 bg-slate-200;
 }
 
 .active .nav-text {
-  @apply text-neutral-200;
+  @apply text-slate-200;
 } */
 
 .active {
   .nav-indicator {
-    @apply w-16 bg-neutral-200;
+    @apply w-16 bg-slate-200;
   }
 
   .nav-text {
-    @apply text-neutral-200;
+    @apply text-slate-200;
   }
 }
 .link-effect {
@@ -50,7 +50,7 @@ html {
     width: 0;
     height: 2px;
     transition: width 0.2s ease-in-out;
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-slate-200);
     border-radius: 50%;
   }
 
