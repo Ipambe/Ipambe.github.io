@@ -6,6 +6,16 @@
   font-weight: 100 900;
   font-style: normal;
 }
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@property --z {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 0;
+}
 
 html {
   font-family: sans-serif;

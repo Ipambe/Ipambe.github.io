@@ -1,0 +1,103 @@
+---
+import AstroIcon from '@/components/icons/AstroIcon.astro'
+import JavaScript from '@/components/icons/JavaScript.astro'
+import TypeScript from '@/components/icons/TypeScript.astro'
+import Drizzle from '@/components/icons/Drizzle.astro'
+import Expo from '@/components/icons/Expo.astro'
+import React from '@/components/icons/React.astro'
+import SectionHeader from '@/components/SectionHeader.astro'
+import Tailwind from '@/components/icons/Tailwind.astro'
+import Prisma from '@/components/icons/Prisma.astro'
+import Express from '@/components/icons/Express.astro'
+import Nest from '@/components/icons/Nest.astro'
+---
+
+<style>
+  div {
+    display: grid;
+    place-items: center;
+    height: 200px;
+    margin: 0;
+    overflow: hidden;
+
+    * {
+      cursor: crosshair;
+    }
+
+    h3 {
+      z-index: 2;
+      grid-area: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      aspect-ratio: 1;
+      border: 2px solid #f4ead5;
+      border-radius: 50%;
+      background-color:;
+    }
+
+    svg {
+      --x-amplitude: 200px;
+      --y-amplitude: 50px;
+      --x: calc(cos(var(--angle)) * var(--x-amplitude));
+      --y: calc(sin(var(--angle)) * var(--y-amplitude));
+
+      grid-area: 1 / 1;
+      padding: 5px;
+      border: 2px solid #2f2f2f;
+      border-radius: 50%;
+
+      --rotation: 180deg;
+      transform: rotate(var(--rotation)) translate(var(--x), var(--y))
+        rotate(calc(var(--rotation) * -1));
+      z-index: calc(var(--z));
+      animation: revolve 15s linear infinite;
+      animation-delay: calc(var(--item) * -1.5s);
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        animation-play-state: paused;
+        border-color: #c1c1c1;
+
+        path {
+          box-shadow: 0 0 10px #c1c1c1;
+        }
+      }
+    }
+
+    &:has(h3:hover) {
+      svg {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  @keyframes revolve {
+    from {
+      --angle: 0deg;
+      --z: 1;
+    }
+    to {
+      --angle: 360deg;
+      --z: 2;
+    }
+  }
+</style>
+<section id='skills' class='py-12'>
+  <SectionHeader title='Skills' />
+  <div>
+    <h3 class='text-white text-2xl bg-neutral-950 font-mono'>{'</>'}</h3>
+    <JavaScript class='size-12 text-white' style='--item: 0' />
+    <TypeScript class='size-12' style='--item: 1' />
+    <AstroIcon class='size-12' style='--item: 2' />
+    <Drizzle class='size-12' style='--item: 3' />
+    <React class='size-12' style='--item: 4' />
+    <Expo class='size-12' style='--item: 5' />
+    <Tailwind class='size-12' style='--item: 6' />
+    <Prisma class='size-12' style='--item: 7' />
+    <Express class='size-12' style='--item: 8' />
+    <Nest class='size-12' style='--item: 9' />
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+const links: { href: string; label: string }[] = [
+  { href: '#about', label: 'Sobre mí' },
+  { href: '#projects', label: 'Proyectos' },
+  { href: '#skills', label: 'Stack' },
+  { href: '#contact', label: 'Contáctame' }
+]
+---
+
+{
+  links.map((link) => (
+    <li>
+      <a
+        class='group flex items-center py-3'
+        href={link.href}
+        title={link.label}
+      >
+        <span class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none' />
+        <span class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'>
+          {link.label}
+        </span>
+      </a>
+    </li>
+  ))
+}
