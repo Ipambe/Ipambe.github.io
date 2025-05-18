@@ -22,12 +22,22 @@ html {
   scroll-behavior: smooth;
 }
 
-.active .nav-indicator {
+/* .active .nav-indicator {
   @apply w-16 bg-neutral-200;
 }
 
 .active .nav-text {
   @apply text-neutral-200;
+} */
+
+.active {
+  .nav-indicator {
+    @apply w-16 bg-neutral-200;
+  }
+
+  .nav-text {
+    @apply text-neutral-200;
+  }
 }
 .link-effect {
   &::after {
