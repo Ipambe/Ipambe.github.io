@@ -38,21 +38,20 @@ import Nest from '@/Components/icons/Nest.astro'
     }
 
     svg {
-      --x-amplitude: 200px;
-      --y-amplitude: 50px;
-      --x: calc(cos(var(--angle)) * var(--x-amplitude));
-      --y: calc(sin(var(--angle)) * var(--y-amplitude));
-
       grid-area: 1 / 1;
       padding: 5px;
       border: 2px solid #2f2f2f;
       border-radius: 50%;
 
-      --rotation: 180deg;
-      transform: rotate(var(--rotation)) translate(var(--x), var(--y))
-        rotate(calc(var(--rotation) * -1));
+      --x-amplitude: min(200px, 35vw);
+      --y-amplitude: 50px;
+
+      --x: calc(cos(var(--angle)) * var(--x-amplitude));
+      --y: calc(sin(var(--angle)) * var(--y-amplitude));
+
+      transform: translate(var(--x), var(--y));
       z-index: calc(var(--z));
-      animation: revolve 15s linear infinite;
+      animation: orbitate 15s linear infinite;
       animation-delay: calc(var(--item) * -1.5s);
 
       transition: all 0.2s ease-in-out;
@@ -74,21 +73,21 @@ import Nest from '@/Components/icons/Nest.astro'
     }
   }
 
-  @keyframes revolve {
+  @keyframes orbitate {
     from {
       --angle: 0deg;
-      --z: 1;
+      --z: 2;
     }
     to {
       --angle: 360deg;
-      --z: 2;
+      --z: 1;
     }
   }
 </style>
 <section id='skills' class='py-12'>
   <SectionHeader title='Skills' />
   <div>
-    <h3 class='text-white text-2xl bg-neutral-950 font-mono'>{'</>'}</h3>
+    <h3 class='text-white text-2xl bg-slate-950 font-mono'>{'</>'}</h3>
     <JavaScript class='size-12 text-white' style='--item: 0' />
     <TypeScript class='size-12' style='--item: 1' />
     <AstroIcon class='size-12' style='--item: 2' />
