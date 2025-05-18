@@ -1,6 +1,7 @@
 ---
-import Github from '@/Components/Github.astro'
-import Linkedin from '@/Components/Linkedin.astro'
+import Github from '@/components/icons/Github.astro'
+import Linkedin from '@/components/icons/Linkedin.astro'
+import NavLinks from '@/components/NavLinks.astro'
 ---
 
 <header
@@ -14,55 +15,12 @@ import Linkedin from '@/Components/Linkedin.astro'
       Desarrollador Web
     </h2>
     <p class='mt-6 max-w-xs md:max-w-sm'>
-      Programando Side-Project tras Side-Project, haciendo push y commits día a
+      Programando side project tras side project, haciendo push y commits día a
       día y aprendiendo de manera constante.
     </p>
     <nav class='nav hidden lg:block'>
       <ul class='mt-16 w-max'>
-        <li>
-          <a class='group flex items-center py-3' href='#about' title='About'>
-            <span
-              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
-            >
-            </span>
-            <span
-              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
-              >Sobre mí</span
-            >
-          </a>
-        </li>
-        <li>
-          <a
-            class='group flex items-center py-3'
-            href='#projects'
-            title='Projects'
-          >
-            <span
-              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
-            >
-            </span>
-            <span
-              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
-              >Proyectos</span
-            >
-          </a>
-        </li>
-        <li>
-          <a
-            class='group flex items-center py-3'
-            href='#contact'
-            title='Contact'
-          >
-            <span
-              class='nav-indicator mr-4 h-px w-8 bg-neutral-600 transition-all group-hover:w-16 group-hover:bg-neutral-200 group-focus-visible:w-16 group-focus-visible:bg-neutral-200 motion-reduce:transition-none'
-            >
-            </span>
-            <span
-              class='nav-text text-xs font-bold tracking-widest text-neutral-500 uppercase group-hover:text-neutral-200 group-focus-visible:text-neutral-200'
-              >Contáctame</span
-            >
-          </a>
-        </li>
+        <NavLinks />
       </ul>
     </nav>
   </div>
@@ -76,7 +34,7 @@ import Linkedin from '@/Components/Linkedin.astro'
         title='GitHub'
       >
         <span class='sr-only'>GitHub</span>
-        <Github class='size-6' />
+        <Github class='size-4 md:size-6' />
       </a>
     </li>
     <li class='mr-5 shrink-0'>
@@ -88,12 +46,12 @@ import Linkedin from '@/Components/Linkedin.astro'
         title='LinkedIn'
       >
         <span class='sr-only'>LinkedIn</span>
-        <Linkedin class='size-6' />
+        <Linkedin class='size-4 md:size-6' />
       </a>
     </li>
     <li class='mr-5 shrink-0'>
       <a
-        class='font-mono text-lg text-neutral-500 hover:text-neutral-300'
+        class='font-mono md:text-lg text-neutral-500 hover:text-neutral-300'
         target='_blank'
         rel='noreferrer noopener'
         href='mailto:adolforosa.dev@gmail.com'
@@ -114,7 +72,7 @@ import Linkedin from '@/Components/Linkedin.astro'
     let current: string | null = null
     sections.forEach((section) => {
       const sectionTop = section.offsetTop
-      if (pageYOffset >= sectionTop - 200) {
+      if (pageYOffset >= sectionTop - 400) {
         current = section.getAttribute('id')
       }
     })
