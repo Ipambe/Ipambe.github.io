@@ -10,6 +10,7 @@ import Tailwind from '@/Components/icons/Tailwind.astro'
 import Prisma from '@/Components/icons/Prisma.astro'
 import Express from '@/Components/icons/Express.astro'
 import Nest from '@/Components/icons/Nest.astro'
+import CSharp from '@/components/icons/CSharp.astro'
 ---
 
 <style>
@@ -51,8 +52,8 @@ import Nest from '@/Components/icons/Nest.astro'
 
       transform: translate(var(--x), var(--y));
       z-index: calc(var(--z));
-      animation: orbitate 15s linear infinite;
-      animation-delay: calc(var(--item) * -1.5s);
+      animation: orbitate 22s linear infinite;
+      animation-delay: calc(var(--item) * -2s);
 
       transition: all 0.2s ease-in-out;
 
@@ -88,15 +89,16 @@ import Nest from '@/Components/icons/Nest.astro'
   <SectionHeader title='Skills' />
   <div>
     <h3 class='text-white text-2xl bg-slate-950 font-mono'>{'</>'}</h3>
-    <JavaScript class='size-12 text-white' style='--item: 0' />
-    <TypeScript class='size-12' style='--item: 1' />
-    <AstroIcon class='size-12' style='--item: 2' />
-    <Drizzle class='size-12' style='--item: 3' />
-    <React class='size-12' style='--item: 4' />
-    <Expo class='size-12' style='--item: 5' />
-    <Tailwind class='size-12' style='--item: 6' />
-    <Prisma class='size-12' style='--item: 7' />
-    <Express class='size-12' style='--item: 8' />
-    <Nest class='size-12' style='--item: 9' />
+    <JavaScript class='size-12 text-white' style='--item: 1' />
+    <TypeScript class='size-12' style='--item: 2' />
+    <AstroIcon class='size-12' style='--item: 3' />
+    <Drizzle class='size-12' style='--item: 4' />
+    <React class='size-12' style='--item: 5' />
+    <Expo class='size-12' style='--item: 6' />
+    <Tailwind class='size-12' style='--item: 7' />
+    <Prisma class='size-12' style='--item: 8' />
+    <Express class='size-12' style='--item: 9' />
+    <Nest class='size-12' style='--item: 10' />
+    <CSharp class='size-12' style='--item: 11' />
   </div>
 </section>
