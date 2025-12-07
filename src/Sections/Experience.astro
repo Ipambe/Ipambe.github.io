@@ -1,0 +1,51 @@
+---
+import SectionHeader from '@/Components/SectionHeader.astro'
+
+const experience = [
+  {
+    link: 'https://centrocuestanacional.com/en/home/',
+    date: 'Sept - Dic 2025',
+    title: 'Pasante QA · Centro Cuesta Nacional',
+    description:
+      'Realicé pruebas de aseguramiento de calidad en aplicaciones web y móviles, identificando y reportando errores para mejorar la experiencia del usuario.',
+    techStack: ['QA Testing', 'JIRA', 'Playwright', 'Appium', 'TypeScript']
+  }
+]
+---
+
+<section class="flex flex-col gap-4" id="experience">
+  <SectionHeader title="Experiencia" />
+  <ul class="flex flex-col gap-4">
+    {
+      experience.map((item) => (
+        <li class="relative group cursor-pointer">
+          <div class="absolute -inset-6 hidden rounded lg:block group-hover:bg-slate-700/20 transition-colors duration-300" />
+          <a
+            class="flex justify-between gap-10"
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-lg font-semibold"
+          >
+            <div>
+              <p class="font-semibold">{item.date}</p>
+            </div>
+            <div class="flex flex-1 flex-col gap-4">
+              <h3 class="text-lg font-bold text-slate-400 group-hover:text-slate-100 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p>{item.description}</p>
+              <div class="mt-1 flex flex-wrap gap-2">
+                {item.techStack.map((tech) => (
+                  <span class="rounded-full  px-2 py-1 text-sm bg-slate-800 text-slate-400">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
