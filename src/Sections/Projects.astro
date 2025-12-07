@@ -33,30 +33,14 @@ const projects: Project[] = [
     description:
       'Aplicación web que permite a los usuarios descargar videos y audios de páginas como YouTube, Facebook, Instagram y TikTok. La aplicación cuenta también con un bot de discord y una extensión de Chrome.',
     stack: ['React', 'Axios', 'Node.js', 'Express', 'Discord.js'],
-    github: 'https://github.com/BarkoRD/daranget',
-    demo: 'https://get.daranhub.com'
-  },
-  {
-    title: 'Martínez Misceláneos',
-    description:
-      'Es una página web que muestre el catálogo de productos de la tienda Martínez Misceláneos. La página también cuenta con un panel de administración que usa OAuth 2.0 para gestionar los productos.',
-    stack: [
-      'Astro',
-      'Tailwind CSS',
-      'React',
-      'NestJS',
-      'DrizzleORM',
-      'SQLite',
-      'JWT',
-      'OAuth2'
-    ]
+    github: 'https://github.com/BarkoRD/daranget'
   }
 ]
 ---
 
-<section class='flex flex-col gap-4' id='projects'>
-  <SectionHeader title='Mis proyectos' />
-  <ul class='flex flex-col gap-4'>
+<section class="flex flex-col gap-4" id="projects">
+  <SectionHeader title="Mis proyectos" />
+  <ul class="flex flex-col gap-4">
     {
       projects.map(({ title, description, stack, github, demo }) => (
         <ProjectCard

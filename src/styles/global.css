@@ -37,8 +37,8 @@ html {
     position: absolute;
     display: inline-block;
     bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    /* transform: translateX(-50%); */
     width: 0;
     height: 2px;
     transition: width 0.2s ease-in-out;
